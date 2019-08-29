@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Matricula</th>
+                <th>Sexo</th>
+                <th>Detalhes</th>
+                <th>deletar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aluno in alunos %}
+                <tr>
+                    <td>{{aluno.id}}</td>
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.matricula}}</td>
+                    <td>{{aluno.sexo}}</td>
+                    <td><button><a href="/aula/aluno/show/{{aluno.id}}">Detalhes</a></button></td>
+                    <td><button><a href="/aula/aluno/{{aluno.id}}">Del</a></button></td>
+                    <td><button><a href="/aula/aluno/editar/{{aluno.id}}">Editar</a></button></td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Foram cadastrados {{ alunos | length }} alunos</p>
+{% endblock %}
