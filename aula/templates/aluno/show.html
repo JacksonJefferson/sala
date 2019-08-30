@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 <h1>Detalhes do Aluno</h1>
-<div>
-    <label>Nome:</label>
-    {{aluno.nome}}
-</div>
-<div>
-    <label>Matricula:</label>
-    {{aluno.matricula}}
-</div>
-<div>
-    <label>Sexo:</label>
-    {{aluno.sexo}}
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Matricula</th>
+            <th>Sexo</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+            <tr>
+                <td>{{aluno.id}}</td>
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.matricula}}</td>
+                <td>{{aluno.sexo}}</td>
+
+            </tr>
+
+    </tbody>
+</table>
 {% endblock %}
